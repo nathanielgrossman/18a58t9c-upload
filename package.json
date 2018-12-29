@@ -1,0 +1,26 @@
+{
+  "name": "18a58t9c-upload",
+  "version": "1.0.0",
+  "description": "S3 uploader to handle large image files for photo gallery site.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nathanielgrossman/18a58t9c-upload.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nathanielgrossman/18a58t9c-upload/issues"
+  },
+  "homepage": "https://github.com/nathanielgrossman/18a58t9c-upload#readme",
+  "dependencies": {
+    "aws-sdk": "^2.382.0",
+    "image-average-color": "^1.0.0",
+    "mongoose": "^5.4.1",
+    "sharp": "^0.21.1"
+  }
+}
