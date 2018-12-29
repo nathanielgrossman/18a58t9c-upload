@@ -1,9 +1,8 @@
-const sharp = require('sharp');
+#!/usr/bin/env node
+
 const path = require("path");
 const stream = require('stream');
-const AWS = require('aws-sdk');
 const mongoose = require('mongoose');
-const Image = require('./image-schema');
 
 const { parseConfig, findImages } = require('./utils')
 const { getAverage, saveRecord, resizeAndUpload, deleteFile } = require('./process')
