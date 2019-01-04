@@ -1,6 +1,6 @@
 {
   "name": "18a58t9c-upload",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "S3 uploader to handle large image files for photo gallery site.",
   "main": "index.js",
   "scripts": {
