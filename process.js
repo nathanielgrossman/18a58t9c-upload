@@ -5,10 +5,12 @@ const sharp = require('sharp');
 const stream = require('stream');
 const AWS = require('aws-sdk');
 
-const s3 = new AWS.S3({
+AWS.config.update({
     accessKeyId: process.env.AWS_ACCESS_KEY,
     secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY
-});
+  });
+
+const s3 = new AWS.S3();
 
 const Image = require('./image-schema');
 
@@ -19,7 +21,8 @@ function getAverage(image) {
         average(metadata.path, (err, color) => {
             if (err) reject(err);
             else {
-                metadata.color = `rgb(${color.join(', ')})`;;
+                color.pop();
+                metadata.color = `rgb(${color.join(', ')})`;
                 console.log('average found for ', image);
                 resolve(metadata);
             }
