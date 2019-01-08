@@ -90,7 +90,7 @@ function resizeAndUpload(metadata) {
         const pipeline = sharp();
         pipeline.clone().webp({ quality: quality }).pipe(uploadStream(s3, metadata, 'webp', false, resolve, reject))
         pipeline.clone().jpeg({ quality: quality }).pipe(uploadStream(s3, metadata, 'jpg', false, resolve, reject))
-        pipeline.clone().resize(tSize, tSize, { fit: 'inside' }).jpeg({ quality: tQuality }).pipe(uploadStream(s3, metadata, 'jpg', true, resolve, reject))
+        pipeline.clone().resize({ height: tSize }).jpeg({ quality: tQuality }).pipe(uploadStream(s3, metadata, 'jpg', true, resolve, reject))
         readStream.pipe(pipeline);
     })
 }
